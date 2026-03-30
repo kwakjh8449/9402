@@ -443,7 +443,7 @@ export default function Page() {
 
       <div className="hero">
         <div className="hero-badge">실사용형 개인 가계부</div>
-        <h1>영수증 스캔도 되고<br />직접 입력도 돼</h1>
+        <h1>영수증 스캔 및 입력</h1>
         <p>영수증이 없을 때도 구매 날짜, 금액, 품목을 직접 적을 수 있고, 자동 통합된 상품명으로 가격비교까지 볼 수 있어.</p>
         <div className="hero-actions">
           <button className="primary-btn" onClick={() => fileRef.current?.click()}>영수증 스캔</button>
