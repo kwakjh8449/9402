@@ -91,7 +91,7 @@ function detectStore(text = "") {
 function detectTotal(text = "") {
   const lines = String(text).split(/\n+/);
   for (const line of lines) {
-    if (/합계|총.?액|결제금액|받을금액/.test(line)) {
+    if (/합계|총액|결제금액|받을금액/.test(line)) {
       const nums = [...line.matchAll(/\d{3,}/g)].map(m => Number(m[0].replace(/,/g, "")));
       if (nums.length) return Math.max(...nums);
     }
@@ -112,7 +112,7 @@ function parseReceiptText(rawText) {
   const items = [];
 
   for (const line of lines) {
-    if (/합계|총.?액|카드|승인|사업자|전화|부가세|영수증|현금영수증|과세|면세/.test(line)) continue;
+    if (/합계|총액|카드|승인|사업자|전화|부가세|영수증|현금영수증|과세|면세/.test(line)) continue;
     const numbers = [...line.matchAll(/\d+/g)].map(m => ({ value: Number(m[0]), index: m.index ?? 0 }));
     if (!numbers.length) continue;
     const last = numbers[numbers.length - 1];
